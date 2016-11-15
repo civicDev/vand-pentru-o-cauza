@@ -31,12 +31,12 @@
       <?php } ?>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><i class="fa fa-user"></i> <?php echo $text_seller_profile; ?></h3>
+          <h3 class="panel-title"><i class="fa fa-user"></i> <?php echo $text_beneficiary_profile; ?></h3>
         </div>
         <div class="panel-body">
 
           <ul class="nav nav-tabs">
-            <?php if (!empty($is_seller)) { ?>
+            <?php if (!empty($is_beneficiary)) { ?>
             <li class="active">
               <a href="#tab-general" data-toggle="tab">
                 <?php echo $tab_general; ?>
@@ -53,8 +53,8 @@
               </a>
             </li>
             <li>
-              <a href="#tab-sellerproduct" data-toggle="tab">
-                <?php echo $tab_sellerproduct; ?>
+              <a href="#tab-beneficiaryproduct" data-toggle="tab">
+                <?php echo $tab_beneficiaryproduct; ?>
               </a>
             </li>
             <li>
@@ -74,7 +74,7 @@
                 <?php echo $tab_history; ?>
               </a>
             </li>
-            <li <?php if (empty($is_seller)) { echo 'class="active"'; } ?>>
+            <li <?php if (empty($is_beneficiary)) { echo 'class="active"'; } ?>>
               <a href="#tab-request_membership" data-toggle="tab">
                 <?php echo $tab_request_membership; ?>
               </a>
@@ -82,18 +82,18 @@
 
           </ul>
           <div class="tab-content">
-            <?php if (!empty($is_seller)) { ?>
+            <?php if (!empty($is_beneficiary)) { ?>
             <div class="tab-pane active" id="tab-general">
               <div class="row">
                 <div class="col-sm-2">
                 </div>
                 <div class="col-sm-11">
                   <div class="tab-content">
-                    <div class="tab-pane active" id="tab-seller">
+                    <div class="tab-pane active" id="tab-beneficiary">
                       <div class="col-md-4">
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-user"></i> <?php echo $text_seller_detail; ?></h3>
+                            <h3 class="panel-title"><i class="fa fa-user"></i> <?php echo $text_beneficiary_detail; ?></h3>
                           </div>
                           <table class="table">
                             <tbody>
@@ -108,10 +108,10 @@
                               </tr>
                               <tr>
                                 <td style="width: 1%;">
-                                  <button data-toggle="tooltip" title="<?php echo $entry_seller_group; ?>" class="btn btn-info btn-xs"><i class="fa fa-users fa-fw"></i></button>
+                                  <button data-toggle="tooltip" title="<?php echo $entry_beneficiary_group; ?>" class="btn btn-info btn-xs"><i class="fa fa-users fa-fw"></i></button>
                                 </td>
                                 <td>
-                                  <?php echo $seller_group; ?>
+                                  <?php echo $beneficiary_group; ?>
                                   </a>
                                 </td>
                               </tr>
@@ -157,66 +157,66 @@
                       <div class="col-md-4">
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-users"></i> <?php echo $text_seller_group_detail; ?></h3>
+                            <h3 class="panel-title"><i class="fa fa-users"></i> <?php echo $text_beneficiary_group_detail; ?></h3>
                           </div>
                           <table class="table">
                             <tbody>
 
-                              <?php foreach ($seller_group_info as $seller_group_info) { ?>
+                              <?php foreach ($beneficiary_group_info as $beneficiary_group_info) { ?>
                               <tr>
                                 <td>
-                                  <button data-toggle="tooltip" title="<?php echo $entry_seller_group_commission; ?>" class="btn btn-info btn-xs"><i class="fa fa-sitemap fa-fw"></i></button>
+                                  <button data-toggle="tooltip" title="<?php echo $entry_beneficiary_group_commission; ?>" class="btn btn-info btn-xs"><i class="fa fa-sitemap fa-fw"></i></button>
                                 </td>
                                 <td>
-                                  <?php echo $seller_group_info['commission_name']; ?>
+                                  <?php echo $beneficiary_group_info['commission_name']; ?>
                                 </td>
 
                               </tr>
                               <tr>
                                 <td>
-                                  <button data-toggle="tooltip" title="<?php echo $entry_seller_group_commission_rate; ?>" class="btn btn-info btn-xs"><i class="fa fa-credit-card fa-fw"></i></button>
+                                  <button data-toggle="tooltip" title="<?php echo $entry_beneficiary_group_commission_rate; ?>" class="btn btn-info btn-xs"><i class="fa fa-credit-card fa-fw"></i></button>
                                 </td>
                                 <td>
-                                  <?php echo $seller_group_info['rate']; ?>
-                                </td>
-
-                              </tr>
-                              <tr>
-                                <td>
-                                  <button data-toggle="tooltip" title="<?php echo $entry_seller_group_subscription_price; ?>" class="btn btn-info btn-xs"><i class="fa fa-usd fa-fw"></i></button>
-                                </td>
-                                <td>
-                                  <?php echo $seller_group_subscription_price; ?>
+                                  <?php echo $beneficiary_group_info['rate']; ?>
                                 </td>
 
                               </tr>
                               <tr>
                                 <td>
-                                  <button data-toggle="tooltip" title="<?php echo $entry_seller_product_total; ?>" class="btn btn-info btn-xs"><i class="fa fa-battery-quarter fa-fw"></i></button>
+                                  <button data-toggle="tooltip" title="<?php echo $entry_beneficiary_group_subscription_price; ?>" class="btn btn-info btn-xs"><i class="fa fa-usd fa-fw"></i></button>
                                 </td>
                                 <td>
-                                  <?php echo $seller_product_total; ?>
-                                </td>
-
-                              </tr>
-                              <tr>
-                                <td>
-                                  <button data-toggle="tooltip" title="<?php echo $entry_seller_group_limit; ?>" class="btn btn-info btn-xs"><i class="fa fa-battery-full fa-fw"></i></button>
-                                </td>
-                                <td>
-                                  <?php echo $seller_group_limit; ?>
+                                  <?php echo $beneficiary_group_subscription_price; ?>
                                 </td>
 
                               </tr>
                               <tr>
                                 <td>
-                                  <button data-toggle="tooltip" title="<?php echo $entry_seller_product_left; ?>" class="btn btn-info btn-xs"><i class="fa fa-exclamation-triangle fa-fw"></i></button>
+                                  <button data-toggle="tooltip" title="<?php echo $entry_beneficiary_product_total; ?>" class="btn btn-info btn-xs"><i class="fa fa-battery-quarter fa-fw"></i></button>
+                                </td>
+                                <td>
+                                  <?php echo $beneficiary_product_total; ?>
+                                </td>
+
+                              </tr>
+                              <tr>
+                                <td>
+                                  <button data-toggle="tooltip" title="<?php echo $entry_beneficiary_group_limit; ?>" class="btn btn-info btn-xs"><i class="fa fa-battery-full fa-fw"></i></button>
+                                </td>
+                                <td>
+                                  <?php echo $beneficiary_group_limit; ?>
+                                </td>
+
+                              </tr>
+                              <tr>
+                                <td>
+                                  <button data-toggle="tooltip" title="<?php echo $entry_beneficiary_product_left; ?>" class="btn btn-info btn-xs"><i class="fa fa-exclamation-triangle fa-fw"></i></button>
                                 </td>
                                 <td>
 
                                   <div class="progress">
-                                    <div class="progress-bar active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo ($seller_product_total / $seller_group_limit)*100;?>%">
-                                      <?php echo ($seller_group_limit - $seller_product_total); ?>
+                                    <div class="progress-bar active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo ($beneficiary_product_total / $beneficiary_group_limit)*100;?>%">
+                                      <?php echo ($beneficiary_group_limit - $beneficiary_product_total); ?>
                                     </div>
                                   </div>
                                 </td>
@@ -253,10 +253,10 @@
 
                       <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
                       <input type="hidden" name="image" value="<?php echo $image; ?>" id="input-image" />
-                      <button type="button" id="button-seller_add_image" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i>
+                      <button type="button" id="button-beneficiary_add_image" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i>
                         <?php echo $button_save; ?>
                       </button>
-                      <button type="button" id="button-seller_delete_image" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-danger"><i class="fa fa-times"></i>
+                      <button type="button" id="button-beneficiary_delete_image" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-danger"><i class="fa fa-times"></i>
                         <?php echo $button_remove; ?>
                       </button>
 
@@ -344,8 +344,8 @@
               <br />
 
             </div>
-            <div class="tab-pane" id="tab-sellerproduct">
-              <div id="sellerproduct"></div>
+            <div class="tab-pane" id="tab-beneficiaryproduct">
+              <div id="beneficiaryproduct"></div>
               <br />
 
             </div>
@@ -366,7 +366,7 @@
 
             </div>
 
-            <div <?php if (empty($is_seller)) { echo 'class="tab-pane active"'; }else{echo 'class="tab-pane"';} ?> id="tab-request_membership">
+            <div <?php if (empty($is_beneficiary)) { echo 'class="tab-pane active"'; }else{echo 'class="tab-pane"';} ?> id="tab-request_membership">
               <div id="request_membership"></div>
               <br />
               <div class="form-group">
@@ -396,41 +396,41 @@
                           <?php echo $column_categories; ?>
                         </td>
                         <td class="text-center">
-                          <?php echo $column_seller_group_description; ?>
+                          <?php echo $column_beneficiary_group_description; ?>
                         </td>
 
                       </tr>
                     </thead>
                     <tbody>
-                      <?php if ($seller_groups) { ?>
-                      <?php foreach ($seller_groups as $seller_group) { ?>
+                      <?php if ($beneficiary_groups) { ?>
+                      <?php foreach ($beneficiary_groups as $beneficiary_group) { ?>
                       <tr>
                         <td class="text-center">
-                          <input type="checkbox" name="selected" value="<?php echo $seller_group['seller_group_id']; ?>" id="<?php echo $seller_group['name']; ?>" />
+                          <input type="checkbox" name="selected" value="<?php echo $beneficiary_group['beneficiary_group_id']; ?>" id="<?php echo $beneficiary_group['name']; ?>" />
 
                         </td>
                         <td class="text-left">
-                          <?php echo $seller_group['name']; ?>
+                          <?php echo $beneficiary_group['name']; ?>
 
-                          <?php if (in_array($seller_group['seller_group_id'], $seller_group_id)) { ?> ( <i class="fa fa-check-circle fa-2x" style="color: green;"></i> )
+                          <?php if (in_array($beneficiary_group['beneficiary_group_id'], $beneficiary_group_id)) { ?> ( <i class="fa fa-check-circle fa-2x" style="color: green;"></i> )
                           <?php } ?>
 
                         </td>
                         <td class="text-center">
-                          <?php echo $seller_group['product_limit']; ?>
+                          <?php echo $beneficiary_group['product_limit']; ?>
                         </td>
                         <td class="text-center">
-                          <?php echo $seller_group['subscription_price']; ?>
+                          <?php echo $beneficiary_group['subscription_price']; ?>
                         </td>
 
 
                         <td class="text-center">
 
-                          <?php echo $seller_group['seller_group_commission_rate']; ?>
+                          <?php echo $beneficiary_group['beneficiary_group_commission_rate']; ?>
                         </td>
-                        <?php if ($seller_group['subscription_duration']) { ?>
+                        <?php if ($beneficiary_group['subscription_duration']) { ?>
                         <td class="text-center">
-                          <?php echo $seller_group['text_subscription_duration']; ?>
+                          <?php echo $beneficiary_group['text_subscription_duration']; ?>
                         </td>
                         <?php } else { ?>
                         <td class="text-center">
@@ -443,17 +443,17 @@
 
 
                         <td class="left">
-                          <div class="scrollbox scrollbox<?php echo '-' .  $seller_group['seller_group_id'];?>" style="border: 1px solid #CCCCCC; width: 350px; height: 100px; background: #FFFFFF; overflow-y: scroll;">
-                            <?php foreach ($seller_group['seller_categories'] as $category) { ?>
+                          <div class="scrollbox scrollbox<?php echo '-' .  $beneficiary_group['beneficiary_group_id'];?>" style="border: 1px solid #CCCCCC; width: 350px; height: 100px; background: #FFFFFF; overflow-y: scroll;">
+                            <?php foreach ($beneficiary_group['beneficiary_categories'] as $category) { ?>
                             <div class="checkbox">
                               <label>
 
-                                <?php if (in_array($category['category_id'], $seller_group['categories'])) { ?>
-                                <input type="checkbox" name="seller_category[]" value="<?php echo $category['category_id']; ?>" checked="checked" />
+                                <?php if (in_array($category['category_id'], $beneficiary_group['categories'])) { ?>
+                                <input type="checkbox" name="beneficiary_category[]" value="<?php echo $category['category_id']; ?>" checked="checked" />
 
                                 <?php echo $category['name']; ?>
                                 <?php } else { ?>
-                                <input type="checkbox" name="seller_category[]" value="<?php echo $category['category_id']; ?>" />
+                                <input type="checkbox" name="beneficiary_category[]" value="<?php echo $category['category_id']; ?>" />
 
                                 <?php echo $category['name']; ?>
 
@@ -469,7 +469,7 @@
 
 
                         <td class="text-center">
-                          <?php echo $seller_group['description']; ?>
+                          <?php echo $beneficiary_group['description']; ?>
                         </td>
 
                       </tr>
@@ -498,7 +498,7 @@
               <div class="pull-right" style="margin-top: 15px;">
                 <?php echo $text_agree; ?>
 
-                <input type="checkbox" id="chk-agree-terms" name="agree" value="1" /> &nbsp;
+                <input type="checkbox" name="agree" value="1" /> &nbsp;
                 <button type="button" id="button-request_membership" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i>
                   <?php echo $button_request_membership_add; ?>
                 </button>
@@ -521,13 +521,13 @@
         $('#badge').load(this.href);
       });
 
-      $('#badge').load('index.php?route=sellerprofile/sellerprofile/badge&seller_id=<?php echo $seller_id; ?>');
+      $('#badge').load('index.php?route=beneficiaryprofile/beneficiaryprofile/badge&beneficiary_id=<?php echo $beneficiary_id; ?>');
 
       $('#button-badge').on('click', function(e) {
         e.preventDefault();
 
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/badge&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/badge&beneficiary_id=<?php echo $beneficiary_id; ?>',
           type: 'post',
           dataType: 'html',
           data: 'comment=' + encodeURIComponent($('#tab-badge textarea[name=\'comment\']').val()),
@@ -550,34 +550,34 @@
     </script>
     <script type="text/javascript">
       <!--
-      $('#sellerproduct').delegate('.pagination a', 'click', function(e) {
+      $('#beneficiaryproduct').delegate('.pagination a', 'click', function(e) {
         e.preventDefault();
 
-        $('#sellerproduct').load(this.href);
+        $('#beneficiaryproduct').load(this.href);
       });
 
-      $('#sellerproduct').load('index.php?route=sellerprofile/sellerprofile/sellerproduct&seller_id=<?php echo $seller_id; ?>');
+      $('#beneficiaryproduct').load('index.php?route=beneficiaryprofile/beneficiaryprofile/beneficiaryproduct&beneficiary_id=<?php echo $beneficiary_id; ?>');
 
-      $('#button-sellerproduct').on('click', function(e) {
+      $('#button-beneficiaryproduct').on('click', function(e) {
         e.preventDefault();
 
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/sellerproduct&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/beneficiaryproduct&beneficiary_id=<?php echo $beneficiary_id; ?>',
           type: 'post',
           dataType: 'html',
-          data: 'comment=' + encodeURIComponent($('#tab-sellerproduct textarea[name=\'comment\']').val()),
+          data: 'comment=' + encodeURIComponent($('#tab-beneficiaryproduct textarea[name=\'comment\']').val()),
           beforeSend: function() {
-            $('#button-sellerproduct').button('loading');
+            $('#button-beneficiaryproduct').button('loading');
           },
           complete: function() {
-            $('#button-sellerproduct').button('reset');
+            $('#button-beneficiaryproduct').button('reset');
           },
           success: function(html) {
             $('.alert').remove();
 
-            $('#sellerproduct').html(html);
+            $('#beneficiaryproduct').html(html);
 
-            $('#tab-sellerproduct textarea[name=\'comment\']').val('');
+            $('#tab-beneficiaryproduct textarea[name=\'comment\']').val('');
           }
         });
       });
@@ -585,14 +585,14 @@
     </script>
     <script type="text/javascript">
       <!--
-      $('#bankaccount').load('index.php?route=bankaccount/bankaccount&profile=<?php echo $seller_id; ?>');
-      $('#history').load('index.php?route=sellerprofile/sellerprofile/history&seller_id=<?php echo $seller_id; ?>');
+      $('#bankaccount').load('index.php?route=bankaccount/bankaccount&profile=<?php echo $beneficiary_id; ?>');
+      $('#history').load('index.php?route=beneficiaryprofile/beneficiaryprofile/history&beneficiary_id=<?php echo $beneficiary_id; ?>');
 
       $('#button-history').on('click', function(e) {
         e.preventDefault();
 
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/history&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/history&beneficiary_id=<?php echo $beneficiary_id; ?>',
           type: 'post',
           dataType: 'html',
           data: 'comment=' + encodeURIComponent($('#tab-history textarea[name=\'comment\']').val()),
@@ -621,16 +621,16 @@
         $('#transaction').load(this.href);
       });
 
-      $('#transaction').load('index.php?route=sellerprofile/sellerprofile/transaction&seller_id=<?php echo $seller_id; ?>');
+      $('#transaction').load('index.php?route=beneficiaryprofile/beneficiaryprofile/transaction&beneficiary_id=<?php echo $beneficiary_id; ?>');
 
       $('#button-transaction').on('click', function(e) {
         e.preventDefault();
 
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/transaction&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/transaction&beneficiary_id=<?php echo $beneficiary_id; ?>',
           type: 'post',
           dataType: 'html',
-          data: 'seller_group_id=' + encodeURIComponent($('#tab-transaction select[name=\'seller_group_id\']').val()) + '&amount=' + encodeURIComponent($('#tab-transaction input[name=\'amount\']').val()),
+          data: 'beneficiary_group_id=' + encodeURIComponent($('#tab-transaction select[name=\'beneficiary_group_id\']').val()) + '&amount=' + encodeURIComponent($('#tab-transaction input[name=\'amount\']').val()),
           beforeSend: function() {
             $('#button-transaction').button('loading');
           },
@@ -657,18 +657,18 @@
         $('#request_membership').load(this.href);
       });
 
-      $('#request_membership').load('index.php?route=sellerprofile/sellerprofile/request_membership&seller_id=<?php echo $seller_id; ?>');
+      $('#request_membership').load('index.php?route=beneficiaryprofile/beneficiaryprofile/request_membership&beneficiary_id=<?php echo $beneficiary_id; ?>');
 
       $('#button-request_membership').on('click', function(e) {
         e.preventDefault();
         if ($('#tab-request_membership input[name=\'agree\']').prop('checked')) {
-          var seller_group_id = $('#tab-request_membership input[name=\'selected\']:checkbox:checked').val();
+          var beneficiary_group_id = $('#tab-request_membership input[name=\'selected\']:checkbox:checked').val();
           $.ajax({
-            url: 'index.php?route=sellerprofile/sellerprofile/request_membership&seller_id=<?php echo $seller_id; ?>',
+            url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/request_membership&beneficiary_id=<?php echo $beneficiary_id; ?>',
             type: 'POST',
             dataType: 'html',
-            data: $('#tab-request_membership .scrollbox-' + seller_group_id + ' input[name=\'seller_category[]\']').serialize() + '&seller_group_name=' + encodeURIComponent($(
-                '#tab-request_membership input[name=\'selected\']:checkbox:checked').attr("id")) + '&description=' + encodeURIComponent($('#tab-request_membership input[name=\'description\']').val()) + '&seller_group_id=' +
+            data: $('#tab-request_membership .scrollbox-' + beneficiary_group_id + ' input[name=\'beneficiary_category[]\']').serialize() + '&beneficiary_group_name=' + encodeURIComponent($(
+                '#tab-request_membership input[name=\'selected\']:checkbox:checked').attr("id")) + '&description=' + encodeURIComponent($('#tab-request_membership input[name=\'description\']').val()) + '&beneficiary_group_id=' +
               encodeURIComponent($('#tab-request_membership input[name=\'selected\']:checkbox:checked').val()),
             beforeSend: function() {
               $('#button-request_membership').button('loading');
@@ -688,9 +688,9 @@
 
 
         } else {
-          var text_seller_agree = '<?php echo $text_seller_agree; ?>';
+          var text_beneficiary_agree = '<?php echo $text_beneficiary_agree; ?>';
 
-          $('#request_membership').prepend('<div class="alert alert-danger"><i class="fa fa-check-circle"></i> ' + text_seller_agree + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+          $('#request_membership').prepend('<div class="alert alert-danger"><i class="fa fa-check-circle"></i> ' + text_beneficiary_agree + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
         }
       });
 
@@ -701,7 +701,7 @@
       $('#button-request_membership').attr("disabled", "disabled");
       // the selector will match all input controls of type :checkbox
       // and attach a click event handler
-      $('#chk-agree-terms').on('click', function() {
+      $(".text-center input:checkbox").on('click', function() {
         // in the handler, 'this' refers to the box clicked on
         var $box = $(this);
         if ($box.is(":checked")) {
@@ -740,7 +740,7 @@
           $('#modal-image').remove();
 
           $.ajax({
-            url: 'index.php?route=sellerproduct/filemanager&token=' + getURLVar('token') + '&target=' + $(element).parent().find('input').attr('id') + '&thumb=' + $(element).attr('id'),
+            url: 'index.php?route=beneficiaryproduct/filemanager&token=' + getURLVar('token') + '&target=' + $(element).parent().find('input').attr('id') + '&thumb=' + $(element).attr('id'),
             dataType: 'html',
             beforeSend: function() {
               $('#button-image i').replaceWith('<i class="fa fa-circle-o-notch fa-spin"></i>');
@@ -769,19 +769,19 @@
         });
       });
 
-      $(document).delegate('#button-seller_add_image', 'click', function() {
+      $(document).delegate('#button-beneficiary_add_image', 'click', function() {
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/seller_add_image&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/beneficiary_add_image&beneficiary_id=<?php echo $beneficiary_id; ?>',
           dataType: 'json',
-          data: 'seller_image=' + encodeURIComponent($('#tab-more_details input[name=\'image\']').val()),
+          data: 'beneficiary_image=' + encodeURIComponent($('#tab-more_details input[name=\'image\']').val()),
           beforeSend: function() {
-            $('#button-seller_add_image').button('loading');
+            $('#button-beneficiary_add_image').button('loading');
           },
           complete: function() {
-            $('#button-seller_add_image').button('reset');
+            $('#button-beneficiary_add_image').button('reset');
 
-            $('#button-seller_add_image').addClass('btn-success');
-            $('#button-seller_add_image').removeClass('btn-primary');
+            $('#button-beneficiary_add_image').addClass('btn-success');
+            $('#button-beneficiary_add_image').removeClass('btn-primary');
 
 
           },
@@ -792,10 +792,10 @@
               $('#content > .container-fluid').prepend('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
             }
 
-            if (json['seller_add_image_no']) {
-              $('#seller_add_image').html(json['seller_add_image_no']);
+            if (json['beneficiary_add_image_no']) {
+              $('#beneficiary_add_image').html(json['beneficiary_add_image_no']);
 
-              $('#button-seller_add_image').replaceWith('<button disabled="disabled" class="btn btn-success btn-xs"><i class="fa fa-cog"></i></button>');
+              $('#button-beneficiary_add_image').replaceWith('<button disabled="disabled" class="btn btn-success btn-xs"><i class="fa fa-cog"></i></button>');
 
             }
           },
@@ -806,19 +806,19 @@
       });
 
 
-      $(document).delegate('#button-seller_delete_image', 'click', function() {
+      $(document).delegate('#button-beneficiary_delete_image', 'click', function() {
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/seller_delete_image&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/beneficiary_delete_image&beneficiary_id=<?php echo $beneficiary_id; ?>',
           dataType: 'json',
-          data: 'seller_image=' + encodeURIComponent($('#tab-more_details input[name=\'image\']').val()),
+          data: 'beneficiary_image=' + encodeURIComponent($('#tab-more_details input[name=\'image\']').val()),
           beforeSend: function() {
-            $('#button-seller_delete_image').button('loading');
+            $('#button-beneficiary_delete_image').button('loading');
           },
           complete: function() {
-            $('#button-seller_delete_image').button('reset');
+            $('#button-beneficiary_delete_image').button('reset');
 
-            $('#button-seller_delete_image').addClass('btn-success');
-            $('#button-seller_delete_image').removeClass('btn-primary');
+            $('#button-beneficiary_delete_image').addClass('btn-success');
+            $('#button-beneficiary_delete_image').removeClass('btn-primary');
 
             $('#thumb-image').find('img').attr('src', $('#thumb-image').find('img').attr('data-placeholder'));
 
@@ -831,10 +831,10 @@
               $('#content > .container-fluid').prepend('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
             }
 
-            if (json['seller_delete_image_no']) {
-              $('#seller_delete_image').html(json['seller_delete_image_no']);
+            if (json['beneficiary_delete_image_no']) {
+              $('#beneficiary_delete_image').html(json['beneficiary_delete_image_no']);
 
-              $('#button-seller_delete_image').replaceWith('<button disabled="disabled" class="btn btn-success btn-xs"><i class="fa fa-cog"></i></button>');
+              $('#button-beneficiary_delete_image').replaceWith('<button disabled="disabled" class="btn btn-success btn-xs"><i class="fa fa-cog"></i></button>');
 
 
             }
@@ -847,9 +847,9 @@
 
       $(document).delegate('#button-facebook', 'click', function() {
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/facebook&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/facebook&beneficiary_id=<?php echo $beneficiary_id; ?>',
           dataType: 'json',
-          data: 'seller_facebook=' + encodeURIComponent($('#tab-more_details input[name=\'facebook\']').val()),
+          data: 'beneficiary_facebook=' + encodeURIComponent($('#tab-more_details input[name=\'facebook\']').val()),
           beforeSend: function() {
             $('#button-facebook').button('loading');
           },
@@ -885,9 +885,9 @@
 
       $(document).delegate('#button-twitter', 'click', function() {
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/twitter&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/twitter&beneficiary_id=<?php echo $beneficiary_id; ?>',
           dataType: 'json',
-          data: 'seller_twitter=' + encodeURIComponent($('#tab-more_details input[name=\'twitter\']').val()),
+          data: 'beneficiary_twitter=' + encodeURIComponent($('#tab-more_details input[name=\'twitter\']').val()),
           beforeSend: function() {
             $('#button-twitter').button('loading');
           },
@@ -923,9 +923,9 @@
 
       $(document).delegate('#button-googleplus', 'click', function() {
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/googleplus&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/googleplus&beneficiary_id=<?php echo $beneficiary_id; ?>',
           dataType: 'json',
-          data: 'seller_googleplus=' + encodeURIComponent($('#tab-more_details input[name=\'googleplus\']').val()),
+          data: 'beneficiary_googleplus=' + encodeURIComponent($('#tab-more_details input[name=\'googleplus\']').val()),
           beforeSend: function() {
             $('#button-googleplus').button('loading');
           },
@@ -961,9 +961,9 @@
 
       $(document).delegate('#button-instagram', 'click', function() {
         $.ajax({
-          url: 'index.php?route=sellerprofile/sellerprofile/instagram&seller_id=<?php echo $seller_id; ?>',
+          url: 'index.php?route=beneficiaryprofile/beneficiaryprofile/instagram&beneficiary_id=<?php echo $beneficiary_id; ?>',
           dataType: 'json',
-          data: 'seller_instagram=' + encodeURIComponent($('#tab-more_details input[name=\'instagram\']').val()),
+          data: 'beneficiary_instagram=' + encodeURIComponent($('#tab-more_details input[name=\'instagram\']').val()),
           beforeSend: function() {
             $('#button-instagram').button('loading');
           },
